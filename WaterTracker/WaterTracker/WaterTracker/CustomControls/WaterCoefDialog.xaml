@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"             
+             x:Class="WaterTracker.CustomControls.WaterCoefDialog">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+          PositionIn="Top"
+          PositionOut="Bottom"
+          ScaleIn="1"
+          ScaleOut="1"
+          DurationIn="300"
+          DurationOut="400"
+          EasingIn="Linear"
+          EasingOut="Linear"
+          HasBackgroundAnimation="True"/>       
+    </pages:PopupPage.Animation>
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Label" x:Key="WaterCoefDialogLable">
+                    <Setter Property="FontSize" Value="22" />
+                    <Setter Property="HorizontalOptions" Value="End" />
+                    <Setter Property="TextColor" Value="Black" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+                <Style TargetType="Image" x:Key="WaterCoefDialogImag">
+                    <Setter Property="HorizontalOptions" Value="Start" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+        <Frame Margin="0,0,0,-50" Grid.Row="1" CornerRadius="20" HasShadow="True" BackgroundColor="White">
+            <StackLayout>
+                <Grid>
+                    <Button BackgroundColor="White" 
+                            Clicked="Button_Clicked"
+                            HorizontalOptions="FillAndExpand" />
+                    <Label InputTransparent="True" Text="&lt;" TextColor="Black" Rotation="270" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Grid>
+                <ScrollView>
+                    <Grid Margin="20,0">
+                        <Image Style="{StaticResource WaterCoefDialogImag}" Grid.Row="0" Source="Water.png" />
+                        <Image Style="{StaticResource WaterCoefDialogImag}" Grid.Row="1" Source="Milk.png" />
+                        <Image Style="{StaticResource WaterCoefDialogImag}" Grid.Row="2" Source="Juice.png" />
+                        <Image Style="{StaticResource WaterCoefDialogImag}" Grid.Row="3" Source="Tea.png"  />
+                        <Image Style="{StaticResource WaterCoefDialogImag}" Grid.Row="4" Source="Coffe.png" />
+                        <Image Style="{StaticResource WaterCoefDialogImag}" Grid.Row="5" Source="Yogurte.png" />
+                        <Label Style="{StaticResource WaterCoefDialogLable}" Grid.Row="0" Grid.Column="1" Text="1" />
+                        <Label Style="{StaticResource WaterCoefDialogLable}" Grid.Row="1" Grid.Column="1" Text="0.7" />
+                        <Label Style="{StaticResource WaterCoefDialogLable}" Grid.Row="2" Grid.Column="1" Text="0.8" />
+                        <Label Style="{StaticResource WaterCoefDialogLable}" Grid.Row="3" Grid.Column="1" Text="0.5" />
+                        <Label Style="{StaticResource WaterCoefDialogLable}" Grid.Row="4" Grid.Column="1" Text="0.4" />
+                        <Label Style="{StaticResource WaterCoefDialogLable}" Grid.Row="5" Grid.Column="1" Text="0.5" />
+                    </Grid>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</pages:PopupPage>

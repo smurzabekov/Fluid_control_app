@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Style="{StaticResource TabItemPage}"
+             x:Class="WaterTracker.Views.EditDalyDrinkPageView">
+    <ContentPage.Content>
+        <StackLayout Spacing="30" Margin="25">            
+            <Grid>
+                <Label HorizontalOptions="Start" FontSize="20" Text="Sex" Style="{StaticResource LabelBaseStyle}" />
+                <StackLayout Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal" Spacing="10">
+                    <Label HorizontalOptions="Center" Style="{StaticResource LabelBaseStyle}" Text="Men"></Label>
+                    <Switch HorizontalOptions="Center" IsToggled="{Binding Sex}" />
+                    <Label HorizontalOptions="Center" Style="{StaticResource LabelBaseStyle}" Text="Women"></Label>
+                </StackLayout>             
+            </Grid>
+            <Grid>
+                <Label HorizontalOptions="Start" FontSize="20" Text="Weight" Style="{StaticResource LabelBaseStyle}" />
+                <Label Grid.Column="1" HorizontalOptions="End" 
+                       FontSize="20" Text="{Binding Weight}" 
+                       Style="{StaticResource LabelBaseStyle}" />
+            </Grid>
+            <Slider Maximum="100" Minimum="50" Value="{Binding Weight}" />           
+            <Grid>
+                <Label HorizontalOptions="Start" FontSize="20" Text="Tranings" Style="{StaticResource LabelBaseStyle}" />
+                <StackLayout Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal" Spacing="10">
+                    <Label HorizontalOptions="Center" Style="{StaticResource LabelBaseStyle}" Text="No"></Label>
+                    <Switch HorizontalOptions="Center" IsToggled="{Binding IsSportsman}" />
+                    <Label HorizontalOptions="Center" Style="{StaticResource LabelBaseStyle}" Text="Yes"></Label>
+                </StackLayout>               
+            </Grid>
+            <Button BackgroundColor="{StaticResource PrimaryColor}"
+                    Text="Save" TextColor="White"
+                    Command="{Binding SaveSettingCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WaterTracker.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <Color x:Key="BackgroundColor">#020438</Color>
+            <Color x:Key="PrimaryColor">#2196F3</Color>
+
+            <Style TargetType="Page" x:Key="TabItemPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"></Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="LabelBaseStyle">
+                <Setter Property="FontFamily" Value="Bold"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontFamily" Value="Bold"></Setter>
+            </Style>
+            <Style TargetType="Button" x:Key="RoundButton">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}"></Setter>
+                <Setter Property="WidthRequest" Value="80"></Setter>
+                <Setter Property="HeightRequest" Value="80"></Setter>
+                <Setter Property="BorderRadius" Value="40"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:translate="clr-namespace:WaterTracker.Localization"
+             mc:Ignorable="d"
+             x:Class="WaterTracker.Views.SettingsPageView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="SettingsLable">
+                
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style TargetType="TimePicker" x:Key="SettingsTimePicker">
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="SettingsStackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <TableView Intent="Settings" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+        <TableView.Root>
+            <TableRoot>
+                <TableSection Title="Set your available time">
+                    <ViewCell>
+                        <Grid Margin="20,0">
+                            <Label Style="{StaticResource SettingsLable}" Text="From" />
+                            <TimePicker Style="{StaticResource SettingsTimePicker}" Time="{Binding DateFrom}" />
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid  Margin="20,0">
+                            <Label Style="{StaticResource SettingsLable}" Text="To" />
+                            <TimePicker Style="{StaticResource SettingsTimePicker}" Time="{Binding DateTo}" />
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid Margin="20,0">
+                            <Label Style="{StaticResource SettingsLable}" Text="Every (in hours)" />
+                            <Picker VerticalOptions="Center"
+                                    Grid.Column="1" 
+                                    TextColor="White"
+                                    SelectedItem="{Binding Every}">
+                                <Picker.Items>
+                                    <x:String>2</x:String>
+                                    <x:String>4</x:String>
+                                    <x:String>6</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Grid>
+                    </ViewCell>
+                </TableSection>              
+                <TableSection Title="EnableNotification">
+                    <ViewCell>
+                        <Grid Margin="20,0">
+                            <Label Style="{StaticResource SettingsLable}" Text="On/Off" />
+                            <Switch IsToggled="{Binding NotificationEnable}" />
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title=" ">
+                    <ViewCell>
+                        <Button Margin="20,0" 
+                                Command="{Binding SaveSettingCommand}"
+                                BackgroundColor="{StaticResource PrimaryColor}" 
+                                TextColor="White" CornerRadius="2" 
+                                HeightRequest="80" Text="Save"></Button>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView.Root>
+    </TableView>
+</ContentPage>

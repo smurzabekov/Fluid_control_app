@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Style="{StaticResource TabItemPage}"
+              xmlns:controls="clr-namespace:WaterTracker.CustomControls"
+             x:Class="WaterTracker.Views.DailyDrinksPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="DailyDrinksLable">
+                <Setter Property="FontSize" Value="18"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+            </Style>
+            <Style TargetType="BoxView" x:Key="BorderBoxView">
+                <Setter Property="WidthRequest" Value="1" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Frame BorderColor="White" Margin="15,25,15,0" HeightRequest="80" Padding="1" CornerRadius="0">
+                <Grid BackgroundColor="{StaticResource PrimaryColor}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="1" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="1"  />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="20" Style="{StaticResource DailyDrinksLable}" Grid.Column="0" Text="Time"  />
+                    <BoxView Style="{StaticResource BorderBoxView}" Grid.Column="1" WidthRequest="1" />
+                    <Label FontSize="20" Style="{StaticResource DailyDrinksLable}" Grid.Column="2" Text="Type"/>
+                    <BoxView Style="{StaticResource BorderBoxView}"  Grid.Column="3" />
+                    <Label FontSize="20" Style="{StaticResource DailyDrinksLable}" Grid.Column="4" Text="Milliliters" />
+                </Grid>
+            </Frame>
+            <controls:ListViewExtended VerticalOptions="FillAndExpand" 
+                                   Grid.Row="1"
+                                   ItemsSource="{Binding Drinks}"
+                                   Margin="15,0" RowHeight="80">
+                <controls:ListViewExtended.Behaviors>
+                    <controls:ListViewClearSelectionBehavior/>
+                </controls:ListViewExtended.Behaviors>
+                <controls:ListViewExtended.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="White" BackgroundColor="Transparent"  Padding="1" CornerRadius="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="1" />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="1"  />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{StaticResource DailyDrinksLable}" Grid.Column="0" Text="{Binding time}" />
+                                    <BoxView Style="{StaticResource BorderBoxView}"  Grid.Column="1"/>
+                                    <Label Style="{StaticResource DailyDrinksLable}" Grid.Column="2" Text="{Binding Type}" />
+                                    <BoxView Style="{StaticResource BorderBoxView}"  Grid.Column="3" />
+                                    <Label Style="{StaticResource DailyDrinksLable}" Grid.Column="4" Text="{Binding ValueInMilliliters,StringFormat='{0}ml'}"  />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </controls:ListViewExtended.ItemTemplate>
+            </controls:ListViewExtended>
+        </Grid>      
+    </ContentPage.Content>
+</ContentPage>

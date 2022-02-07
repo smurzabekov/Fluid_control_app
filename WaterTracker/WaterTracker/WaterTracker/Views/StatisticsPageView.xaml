@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:WaterTracker.CustomControls"
+             mc:Ignorable="d"
+             x:Class="WaterTracker.Views.StatisticsPageView">
+    <ContentPage.Content>
+        <controls:ListViewExtended VerticalOptions="FillAndExpand" 
+                                   ItemsSource="{Binding DailyDrinks}"
+                                   ItemClickCommand="{Binding OpenDetails}"
+                                   Margin="10" RowHeight="80">
+            <controls:ListViewExtended.Behaviors>
+                <controls:ListViewClearSelectionBehavior/>
+            </controls:ListViewExtended.Behaviors>
+            <controls:ListViewExtended.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="0" Margin="0,10" CornerRadius="15">
+                            <Grid BackgroundColor="{StaticResource PrimaryColor}">
+                                <Label FontSize="18" VerticalOptions="Center" TextColor="Black" Grid.Column="0" Text="{Binding dateTimeString}" HorizontalOptions="End" />
+                                <Label FontSize="18" VerticalOptions="Center" Grid.Column="1" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span TextColor="Black" Text=":   " />
+                                            <Span TextColor="White" Text="{Binding sum}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>   
+                </DataTemplate>
+            </controls:ListViewExtended.ItemTemplate>
+        </controls:ListViewExtended>
+    </ContentPage.Content>
+</ContentPage>

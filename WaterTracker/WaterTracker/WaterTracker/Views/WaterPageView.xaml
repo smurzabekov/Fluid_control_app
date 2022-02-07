@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:WaterTracker.CustomControls"
+             mc:Ignorable="d"             
+             Title="TITLE"
+             x:Class="WaterTracker.Views.WaterPageView">
+    <ContentPage.Content>
+        <Grid>                     
+            <controls:WaterFillLoading 
+                MaxValue="{Binding Gol}"
+                x:Name="WaterLoader"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand" />
+            <StackLayout  Margin="0,40,0,0"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center">
+                <Label Style="{StaticResource LabelBaseStyle}" FontSize="20" Text="Your water balance for today" />
+                <Label Style="{StaticResource LabelBaseStyle}" FontSize="18" Text="{Binding WaterBalance}" />
+            </StackLayout>
+            <Button                 
+                Command="{Binding Add}"
+                Style="{StaticResource RoundButton}"
+                Margin="0,0,40,40"
+                VerticalOptions="End" 
+                ImageSource="add.png"
+                HorizontalOptions="End" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterTracker.Android", "WaterTracker\WaterTracker.Android\WaterTracker.Android.csproj", "{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaterTracker", "WaterTracker\WaterTracker\WaterTracker.csproj", "{06AA8855-5386-4AA1-9106-6FCD4995148A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0756AF4C-DABC-400D-94C0-7AB1F1D6E003}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{06AA8855-5386-4AA1-9106-6FCD4995148A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AA8855-5386-4AA1-9106-6FCD4995148A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AA8855-5386-4AA1-9106-6FCD4995148A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AA8855-5386-4AA1-9106-6FCD4995148A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7B36D37-5351-4C61-B480-40868495CE83}
+	EndGlobalSection
+EndGlobal
